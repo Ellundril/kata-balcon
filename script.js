@@ -60,7 +60,7 @@ function afficherPlantes(liste) {
 }
 
 // TODO 4 — Au chargement de la page, affiche toutes les plantes.
-
+afficherPlantes(plantes);
 // ---------- PARTIE 3 : les clics ----------
 
 // TODO 5 — Les trois boutons de filtre
