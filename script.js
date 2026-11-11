@@ -71,15 +71,24 @@ const btnToutes = document.getElementById("btn-toutes");
 btnExterieur.addEventListener("click", () => {
   const plantesExterieur = filtrerParLieu(plantes, "extérieur");
   afficherPlantes(plantesExterieur);
+  boutonActif(btnExterieur);
+  boutonInactif(btnInterieur);
+  boutonInactif(btnToutes);
 });
 
 btnInterieur.addEventListener("click", () => {
   const plantesInterieur = filtrerParLieu(plantes, "intérieur");
   afficherPlantes(plantesInterieur);
+  boutonActif(btnInterieur);
+  boutonInactif(btnExterieur);
+  boutonInactif(btnToutes);
 });
 
 btnToutes.addEventListener("click", () => {
   afficherPlantes(plantes);
+  boutonActif(btnToutes);
+  boutonInactif(btnExterieur);
+  boutonInactif(btnInterieur);
 });
 // Au clic sur « Intérieur » : affiche seulement les plantes d'intérieur.
 // Au clic sur « Extérieur » : seulement celles d'extérieur.
@@ -88,6 +97,12 @@ btnToutes.addEventListener("click", () => {
 
 // TODO 6 — Le bouton actif
 // Le bouton cliqué prend la classe "actif", les deux autres la perdent.
+function boutonActif(bouton) {
+  bouton.classList.add("actif");
+}
+function boutonInactif(bouton) {
+  bouton.classList.remove("actif");
+}
 
 // =====================================================
 // Questions de recul (réponds en commentaire ici)
