@@ -64,6 +64,19 @@ afficherPlantes(plantes);
 // ---------- PARTIE 3 : les clics ----------
 
 // TODO 5 — Les trois boutons de filtre
+const btnInterieur = document.getElementById("btn-interieur");
+const btnExterieur = document.getElementById("btn-exterieur");
+const btnToutes = document.getElementById("btn-toutes");
+
+btnExterieur.addEventListener("click", () => {
+  const plantesExterieur = filtrerParLieu(plantes, "extérieur");
+  afficherPlantes(plantesExterieur);
+});
+
+btnInterieur.addEventListener("click", () => {
+  const plantesInterieur = filtrerParLieu(plantes, "intérieur");
+  afficherPlantes(plantesInterieur);
+});
 // Au clic sur « Intérieur » : affiche seulement les plantes d'intérieur.
 // Au clic sur « Extérieur » : seulement celles d'extérieur.
 // Au clic sur « Toutes » : toutes les plantes.
