@@ -77,6 +77,10 @@ btnInterieur.addEventListener("click", () => {
   const plantesInterieur = filtrerParLieu(plantes, "intérieur");
   afficherPlantes(plantesInterieur);
 });
+
+btnToutes.addEventListener("click", () => {
+  afficherPlantes(plantes);
+});
 // Au clic sur « Intérieur » : affiche seulement les plantes d'intérieur.
 // Au clic sur « Extérieur » : seulement celles d'extérieur.
 // Au clic sur « Toutes » : toutes les plantes.
