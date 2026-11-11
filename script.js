@@ -38,14 +38,26 @@ function filtrerParLieu(liste, lieu) {
 
 // ---------- PARTIE 2 : les fonctions qui AFFICHENT ----------
 // Elles modifient la page. Elles ne retournent rien.
-
+const listeAffichee = document.getElementById("liste");
+const compteurArrosage = document.getElementById("compteur");
 // TODO 3 — afficherPlantes(liste)
 // 1. Vide la liste <ul id="liste">
 // 2. Pour chaque plante, crée un <li> qui contient l'emoji puis le nom
 // 3. Si la plante est à arroser, ajoute au <li> la classe "a-arroser"
 // 4. Mets à jour <p id="compteur"> : « 4 plantes à arroser sur 8 »
 //    (utilise compterAArroser, ne recompte pas ici)
-function afficherPlantes(liste) {}
+function afficherPlantes(liste) {
+  listeAffichee.innerHTML = "";
+  liste.forEach((plante) => {
+    const identitePlante = document.createElement("li");
+    identitePlante.innerHTML = `${plante.emoji} ${plante.nom}`;
+    if (plante.aArroser) {
+      identitePlante.classList.add("a-arroser");
+    }
+    listeAffichee.appendChild(identitePlante);
+    compterAArroser.innerHTML = `${compterAArroser(liste)} plantes à arroser sur ${liste.length}`;
+  });
+}
 
 // TODO 4 — Au chargement de la page, affiche toutes les plantes.
 
