@@ -77,35 +77,27 @@ btnExterieur.addEventListener("click", () => {
   const plantesExterieur = filtrerParLieu(plantes, "extérieur");
   afficherPlantes(plantesExterieur);
   boutonActif(btnExterieur);
-  boutonInactif(btnInterieur);
-  boutonInactif(btnToutes);
-  boutonInactif(btnArrosage);
+  boutonInactif([btnInterieur, btnToutes, btnArrosage]);
 });
 
 btnInterieur.addEventListener("click", () => {
   const plantesInterieur = filtrerParLieu(plantes, "intérieur");
   afficherPlantes(plantesInterieur);
   boutonActif(btnInterieur);
-  boutonInactif(btnExterieur);
-  boutonInactif(btnToutes);
-  boutonInactif(btnArrosage);
+  boutonInactif([btnExterieur, btnToutes, btnArrosage]);
 });
 
 btnToutes.addEventListener("click", () => {
   afficherPlantes(plantes);
   boutonActif(btnToutes);
-  boutonInactif(btnExterieur);
-  boutonInactif(btnInterieur);
-  boutonInactif(btnArrosage);
+  boutonInactif([btnExterieur, btnInterieur, btnArrosage]);
 });
 
 btnArrosage.addEventListener("click", () => {
   const plantesAArroser = filtrerParArrosage(plantes);
   afficherPlantes(plantesAArroser);
   boutonActif(btnArrosage);
-  boutonInactif(btnExterieur);
-  boutonInactif(btnInterieur);
-  boutonInactif(btnToutes);
+  boutonInactif([btnExterieur, btnToutes, btnInterieur]);
 });
 // Au clic sur « Intérieur » : affiche seulement les plantes d'intérieur.
 // Au clic sur « Extérieur » : seulement celles d'extérieur.
@@ -117,8 +109,10 @@ btnArrosage.addEventListener("click", () => {
 function boutonActif(bouton) {
   bouton.classList.add("actif");
 }
-function boutonInactif(bouton) {
-  bouton.classList.remove("actif");
+function boutonInactif(tabBouton) {
+  tabBouton.forEach((bouton) => {
+    bouton.classList.remove("actif");
+  });
 }
 
 // =====================================================
