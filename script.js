@@ -71,6 +71,7 @@ afficherPlantes(plantes);
 const btnInterieur = document.getElementById("btn-interieur");
 const btnExterieur = document.getElementById("btn-exterieur");
 const btnToutes = document.getElementById("btn-toutes");
+const btnArrosage = document.getElementById("btn-arrosage");
 
 btnExterieur.addEventListener("click", () => {
   const plantesExterieur = filtrerParLieu(plantes, "extérieur");
@@ -78,6 +79,7 @@ btnExterieur.addEventListener("click", () => {
   boutonActif(btnExterieur);
   boutonInactif(btnInterieur);
   boutonInactif(btnToutes);
+  boutonInactif(btnArrosage);
 });
 
 btnInterieur.addEventListener("click", () => {
@@ -86,6 +88,7 @@ btnInterieur.addEventListener("click", () => {
   boutonActif(btnInterieur);
   boutonInactif(btnExterieur);
   boutonInactif(btnToutes);
+  boutonInactif(btnArrosage);
 });
 
 btnToutes.addEventListener("click", () => {
@@ -93,6 +96,16 @@ btnToutes.addEventListener("click", () => {
   boutonActif(btnToutes);
   boutonInactif(btnExterieur);
   boutonInactif(btnInterieur);
+  boutonInactif(btnArrosage);
+});
+
+btnArrosage.addEventListener("click", () => {
+  const plantesAArroser = filtrerParArrosage(plantes);
+  afficherPlantes(plantesAArroser);
+  boutonActif(btnArrosage);
+  boutonInactif(btnExterieur);
+  boutonInactif(btnInterieur);
+  boutonInactif(btnToutes);
 });
 // Au clic sur « Intérieur » : affiche seulement les plantes d'intérieur.
 // Au clic sur « Extérieur » : seulement celles d'extérieur.
