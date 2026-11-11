@@ -1,29 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon balcon</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Mon balcon</h1>
-    <p id="compteur">Chargement…</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon balcon</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Mon balcon</h1>
+      <p id="compteur">Chargement…</p>
+    </header>
 
-  <main>
-    <nav aria-label="Filtrer les plantes">
-      <button type="button" id="btn-toutes" class="filtre actif">Toutes</button>
-      <button type="button" id="btn-interieur" class="filtre">Intérieur</button>
-      <button type="button" id="btn-exterieur" class="filtre">Extérieur</button>
-    </nav>
+    <main>
+      <nav aria-label="Filtrer les plantes">
+        <button type="button" id="btn-toutes" class="filtre actif">
+          Toutes
+        </button>
+        <button type="button" id="btn-interieur" class="filtre">
+          Intérieur
+        </button>
+        <button type="button" id="btn-exterieur" class="filtre">
+          Extérieur
+        </button>
+        <button type="button" id="btn-arrosage">À arroser</button>
+      </nav>
 
-    <ul id="liste"></ul>
-  </main>
+      <ul id="liste"></ul>
+    </main>
 
-  <!-- L'ordre compte : les données d'abord, le script ensuite -->
-  <script src="plantes.js"></script>
-  <script src="script.js"></script>
-</body>
+    <!-- L'ordre compte : les données d'abord, le script ensuite -->
+    <script src="plantes.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
