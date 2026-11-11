@@ -24,9 +24,17 @@ function compterAArroser(liste) {
 // TODO 2 — filtrerParLieu(liste, lieu)
 // Retourne un NOUVEAU tableau avec seulement les plantes dont le lieu
 // est égal au paramètre lieu ("intérieur" ou "extérieur").
-function filtrerParLieu(liste, lieu) {}
+function filtrerParLieu(liste, lieu) {
+  let tabLieu = [];
+  liste.forEach((plante) => {
+    if (plante.lieu === lieu) {
+      tabLieu.push(plante);
+    }
+  });
+  return tabLieu;
+}
 
-// console.log(filtrerParLieu(plantes, "intérieur")) // doit afficher 4 plantes
+//console.log(filtrerParLieu(plantes, "extérieur")); // doit afficher 4 plantes
 
 // ---------- PARTIE 2 : les fonctions qui AFFICHENT ----------
 // Elles modifient la page. Elles ne retournent rien.
