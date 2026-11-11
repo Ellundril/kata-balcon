@@ -55,7 +55,7 @@ function afficherPlantes(liste) {
       identitePlante.classList.add("a-arroser");
     }
     listeAffichee.appendChild(identitePlante);
-    compterAArroser.innerHTML = `${compterAArroser(liste)} plantes à arroser sur ${liste.length}`;
+    compteurArrosage.innerHTML = `${compterAArroser(liste)} plantes à arroser sur ${liste.length}`;
   });
 }
 
