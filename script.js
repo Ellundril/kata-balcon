@@ -117,7 +117,8 @@ function boutonInactif(tabBouton) {
 
 // =====================================================
 // Questions de recul (réponds en commentaire ici)
-// 1.
-// 2.
-// 3.
+// 1. On pourrait tester toutes les fonctions qui calculent avec Jest. On ne peut pas tester la fonction afficher plantes car elle ne retourne rien, elle gère un affichage dans le html.
+// 2. La liste va devenir de plus en plsu longue avec les doublons créés à chaque clic. Les filtres ne fonctionneront donc plus puisque les plantes filtrées vont se rajouter aux plantes affichées avec le bouton précédent. C'est ce qui se passe quand on enlève la ligne de code qui vide la liste.
+// 3. Voici le message qui s'affiche : script.js:67 Uncaught ReferenceError: plantes is not defined
+//    at script.js:67:17. Le message me dit que le tableau plantes n'est pas défini. En effet script.js se charge avant plantes.js et donc au moment du chargement plantes n'est pas encore déclaré. D'où l'intérêt de d'abord charger plantes.js, ainsi plantes est déclaré et et script.js peut aller mire le contenu de ce tableau d'objets.
 // =====================================================
