@@ -28,8 +28,13 @@ function filtrerParLieu(liste, lieu) {
   const tabLieu = liste.filter((plante) => plante.lieu === lieu);
   return tabLieu;
 }
-
 //console.log(filtrerParLieu(plantes, "extérieur")); // doit afficher 4 plantes
+
+function filtrerParArrosage(liste) {
+  const tabAArroser = liste.filter((plante) => plante.aArroser);
+  return tabAArroser;
+}
+//console.log(filtrerParArrosage(plantes)); //doit afficher 4 plantes à arroser
 
 // ---------- PARTIE 2 : les fonctions qui AFFICHENT ----------
 // Elles modifient la page. Elles ne retournent rien.
